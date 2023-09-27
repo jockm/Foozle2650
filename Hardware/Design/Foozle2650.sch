@@ -8523,6 +8523,11 @@ SparkFun BigTime Watch Kit&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
 <wire x1="137.16" y1="104.14" x2="124.46" y2="104.14" width="0.1524" layer="91"/>
 <label x="132.08" y="104.14" size="1.016" layer="95"/>
 </segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="I9/!OE"/>
+<wire x1="243.84" y1="180.34" x2="251.46" y2="180.34" width="0.1524" layer="91"/>
+<label x="246.38" y="180.34" size="1.016" layer="95"/>
+</segment>
 </net>
 <net name="!ROMCS" class="0">
 <segment>
