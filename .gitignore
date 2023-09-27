@@ -1,0 +1,10 @@
+**/*.b#*
+**/*.s#*
+**/gerber
+**/.DS_Store
+**/*.o
+**/PLD/*.abs
+**/PLD/*.doc
+**/PLD/*.pdf
+**/PLD/*.SIM
+**/PLD/CB*

@@ -1,0 +1,44 @@
+Name        Jock Murphy;
+Partno      ;
+Revision    ;
+Date        09/26/2023;
+Designer    Jock Murphy;
+Company     ;
+Location    ;
+Assembly    ;
+Device      g16v8a;
+
+/* 
+	NOTE: This file is heavily inspired by the PLD code found in:
+		https://github.com/jim11662418/Signetics-2650-SBC
+*/
+
+/** Input Pins **/
+pin 1  = MIO;
+pin 2  = RW;
+pin 3  = WRP;
+pin 4  = OPREQ;
+pin 5  = A14;
+pin 6  = A13;
+pin 7  = A12;
+pin 8  = A11;
+pin 9  = A10;
+/* pin 11 = A9; Little bug, we forgot to connect A9... oops */
+pin 12 = A8;
+
+/** Output Pins**/
+pin 19 = !RAMCS;
+pin 18 = !ROMCS;
+pin 17 = !RD;
+pin 16 = !WR;
+pin 15 = !IO1CS;
+pin 14 = !IO2CS;
+
+WR = WRP & RW;
+RD = !RW;
+
+FIELD ADDRESS = [A14..A10,A8];
+ROMCS    = OPREQ & MIO & (ADDRESS:[00XX..03XX] # ADDRESS:[08XX..1FXX]);
+RAMCS    = OPREQ & MIO & (ADDRESS:[04XX..07XX] # ADDRESS:[20XX..7BXX]);
+IO1CS    = OPREQ & MIO & ADDRESS:[7CXX];
+IO2CS    = OPREQ & MIO & ADDRESS:[7DXX];
