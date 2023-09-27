@@ -8,3 +8,5 @@
 **/PLD/*.pdf
 **/PLD/*.SIM
 **/PLD/CB*
+**/Software/*.bin
+**/Software/*.lst
